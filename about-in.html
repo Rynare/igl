@@ -70,9 +70,102 @@
           display: none;
         }
       }
+
+      .green-effect {
+        background: #2c3c34a1;
+      }
     </style>
   </head>
   <body>
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 green-effect bg-main transition-colors duration-300">
+      <nav class="flex items-center justify-between">
+        <div class="flex items-center md:pl-12 pl-6">
+          <img src="./img/logo.png" alt="Logo" class="h-10 mr-2" />
+          <span class="text-white font-normal text-lg font-times">
+            G R E E N L A N D
+          </span>
+        </div>
+        <div class="block">
+          <button
+            id="menu-toggle"
+            class="text-white focus:outline-none bg-[#3c4f4b] p-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-list w-6 h-6"
+              viewBox="0 0 16 16">
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div
+        id="side-menu"
+        class="fixed top-0 right-0 h-full w-64 bg-[#3c4f4b] transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div
+          class="flex items-center justify-between px-6 py-4 text-sm text-white font-times">
+          <p class="flex items-center">
+            <img src="./img/logo.png" alt="Logo" class="h-8 pe-3" /> G R E E N L
+            A N D
+          </p>
+          <button
+            id="menu-close"
+            class="text-white focus:outline-none text-2xl">
+            &times;
+          </button>
+        </div>
+        <ul class="px-6 text-white">
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg my-3">
+            <a href="#section0" class="scroll-link">Home</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="#section1" class="scroll-link">About</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="#section3" class="scroll-link">Visit</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="#section4" class="scroll-link">Videos</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="#section5" class="scroll-link">News</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="#section6" class="scroll-link">Promo</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="#section7" class="scroll-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <script>
+      // Toggle sidebar open
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document
+            .getElementById("side-menu")
+            .classList.remove("translate-x-full");
+        });
+
+      // Toggle sidebar close
+      document
+        .getElementById("menu-close")
+        .addEventListener("click", function () {
+          document
+            .getElementById("side-menu")
+            .classList.add("translate-x-full");
+        });
+    </script>
+
     <section
       id="section1"
       class="bg-cover bg-center"
@@ -95,7 +188,7 @@
         </div>
       </div>
     </section>
-    <section id="section2" class="bg-main h-screen">
+    <section id="section2" class="bg-[#3c4f4b] h-screen">
       <div class="flex items-center justify-center h-full">
         <div class="md:flex block px-16 mx-auto mb-16">
           <div
@@ -127,7 +220,7 @@
       id="section3"
       class="bg-cover bg-center"
       data-aos="fade-up"></section>
-    <section id="section4" class="bg-second h-fit">
+    <section id="section4" class="bg-[#f5f4ed] h-fit">
       <div class="grid items-center justify-center h-full">
         <div
           class="md:flex block px-16 mx-auto mb-8 md:mt-16 mt-6 md:order-1 order-2">
@@ -196,12 +289,12 @@
         data-aos="fade-up"
         data-aos-duration="1000">
         <div
-          class="md:w-2/4 w-full font-nunito text-second text-md text-center md:text-left">
+          class="md:w-2/4 w-full font-nunito text-[#f5f4ed] text-md text-center md:text-left">
           <span class="font-thin">PROJECT HIGHLIGHT</span> <br />
         </div>
         <div class="md:w-3/4 w-full mt-3 md:mt-0">
           <p
-            class="text-size-main text-center md:text-left text-second font-times"
+            class="text-size-main text-center md:text-left text-[#f5f4ed] font-times"
             id="textSection2"
             data-aos="fade-up"
             data-aos-delay="200">
@@ -240,7 +333,7 @@
     </section>
     <footer
       id="footer"
-      class="flex flex-col items-center justify-center pt-10 pb-12 bg-main text-white">
+      class="flex flex-col items-center justify-center pt-10 pb-12 bg-[#3c4f4b] text-white">
       <div class="text-center w-[90%]">
         <img
           alt="Greenland logo"
@@ -293,7 +386,7 @@
       AOS.init();
     </script>
     <script>
-      tailwind.config = {
+      module.exports = {
         theme: {
           extend: {
             colors: {
@@ -304,9 +397,34 @@
             fontFamily: {
               nunito: ["Nunito", "sans-serif"],
             },
+            backdropFilter: {
+              none: "none",
+              blur: "blur(10px)",
+            },
           },
         },
+        variants: {
+          extend: {
+            backdropFilter: ["responsive"],
+          },
+        },
+        plugins: [
+          require("@tailwindcss/forms"),
+          require("tailwindcss-filters"),
+        ],
       };
+      s;
+    </script>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navigation = document.getElementById("navigation");
+
+      menuToggle.addEventListener("click", () => {
+        navigation.classList.toggle("hidden");
+        navigation.classList.toggle("translate-y-0");
+        navigation.classList.toggle("opacity-100");
+      });
     </script>
   </body>
 </html>
