@@ -1,0 +1,808 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Greenland Elegant Homes and Investment</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap"
+      rel="stylesheet" />
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="btn-visit.css" />
+    <style>
+      .bg-blend-img {
+        background: url("./img/bGBlend.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 120vh;
+      }
+      .bg-blend-main {
+        background: linear-gradient(
+          to top,
+          rgb(180, 199, 216) 0.5%,
+          rgba(154, 158, 160, 0.557)
+        );
+        background-size: cover;
+        height: 100vh;
+      }
+      .bg-blend {
+        background: linear-gradient(
+            to bottom,
+            rgba(245, 244, 237, 1),
+            rgba(248, 244, 236, 0.9),
+            rgba(248, 244, 236, 0.7),
+            rgba(248, 244, 236, 0.5),
+            rgba(248, 244, 236, 0.3),
+            rgba(248, 244, 236, 0)
+          ),
+          url("./img/bGVideo.jpg");
+        background-size: cover;
+      }
+
+      .font-nunito {
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      .font-times {
+        font-family: "Times New Roman", serif;
+      }
+      .text-size-main {
+        font-size: 2.7rem;
+        line-height: 1.2;
+      }
+      @media (max-width: 768px) {
+        .text-size-main {
+          font-size: 1.7rem;
+          line-height: 1;
+        }
+      }
+
+      .green-effect {
+        background: #2c3c34a1;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      #videoOverlay {
+        background-image: url("../img/video-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: opacity 0.5s ease;
+      }
+
+      #videoOverlay.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #playButton {
+        cursor: pointer;
+        animation: pulse 1.5s infinite;
+      }
+
+      #playButton {
+        box-shadow: 0 0 20px rgb(255, 255, 255);
+        transition: all 0.3s ease;
+      }
+
+      #playButton:hover {
+        box-shadow: 0 0 40px rgb(255, 255, 255);
+        transform: scale(1.1);
+        background-color: #38544c;
+      }
+
+      .btn-yt {
+        transition: all 0.3s ease;
+        color: #38544c;
+        fill: #38544c;
+      }
+
+      .btn-yt:hover {
+        color: #fff;
+        fill: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 green-effect bg-main transition-colors duration-300">
+      <nav class="flex items-center justify-between">
+        <div class="flex items-center md:pl-12 pl-6">
+          <img src="./img/logo.png" alt="Logo" class="h-10 mr-5" />
+          <span class="text-white font-light text-lg font-times tracking-[1px]">
+            G R E E N L A N D
+          </span>
+        </div>
+        <div class="block">
+          <button
+            id="menu-toggle"
+            class="text-white focus:outline-none bg-[#3c4f4b] p-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-list w-6 h-6"
+              viewBox="0 0 16 16">
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div
+        id="side-menu"
+        class="fixed top-0 right-0 h-full w-64 bg-[#3c4f4b] transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div
+          class="flex items-center justify-between px-6 py-4 text-sm text-white font-times">
+          <p class="flex items-center">
+            <img src="./img/logo.png" alt="Logo" class="h-8 pe-3" /> G R E E N L
+            A N D
+          </p>
+          <button
+            id="menu-close"
+            class="text-white focus:outline-none text-2xl">
+            &times;
+          </button>
+        </div>
+        <ul class="px-6 text-white">
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg my-3">
+            <a href="./index.html" class="scroll-link">Home</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="./about.html" class="scroll-link">About</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="./clusters.html" class="scroll-link">Cluster</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="./news.html" class="scroll-link">News</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="./promo.html" class="scroll-link">Promo</a>
+          </li>
+          <li class="ps-4 py-2 hover:bg-[#FFFFFF45] font-times text-lg mb-3">
+            <a href="#footer" class="scroll-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document
+            .getElementById("side-menu")
+            .classList.remove("translate-x-full");
+        });
+
+      document
+        .getElementById("menu-close")
+        .addEventListener("click", function () {
+          document
+            .getElementById("side-menu")
+            .classList.add("translate-x-full");
+        });
+    </script>
+    <swiper-container class="mySwiper" id="section0">
+      <swiper-slide
+        style="
+          text-align: start;
+          background-image: url('./img/bGSection1.jpg');
+          background-size: cover;
+          background-position: center;
+        ">
+        <div class="md:pt-40 pt-[14rem] md:pl-20 pl-5">
+          <h1
+            class="text-white md:text-6xl text-4xl font-medium leading-tight font-times"
+            data-aos="fade-up">
+            A Perfect Blend of<br />Elegant Homes and<br />Investment
+          </h1>
+          <p
+            class="text-white tracking-wide text-base mt-8"
+            data-aos="fade-up"
+            data-aos-delay="100">
+            DISCOVER GREENLAND
+          </p>
+          <p
+            class="text-white tracking-wide text-base font-bold"
+            data-aos="fade-up"
+            data-aos-delay="200">
+            WHERE VIBRANT LIFE BEGINS
+          </p>
+          <button
+            class="btn-visit flex items-center pt-5"
+            data-aos="fade-up"
+            data-aos-delay="300">
+            <span class="text text-xs tracking-wider">Schedule a Visit</span>
+            <span class="circle">
+              <span class="arrow">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right"
+                  viewBox="0 0 24 16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    stroke="currentColor"
+                    stroke-width="2" />
+                  <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+
+    <section
+      id="section1"
+      class="wrapper relative bg-blend-main"
+      data-aos="fade-in">
+      <div class="mx-auto md:w-[87%] w-[100%] md:pt-24 pt-5">
+        <div class="md:flex grid justify-between relative">
+          <div
+            class="md:order-1 order-2 left-content md:w-1/2 w-full text-white text-left md:mb-12 mb-5 md:p-0 p-5 pb-0"
+            data-aos="fade-right">
+            <h1
+              class="md:text-6xl text-2xl mb-5 text-[#3c4f4b] font-times md:leading-[75px] leading-[30px]">
+              Beautifully designed for your work life balance
+            </h1>
+            <p
+              class="text-black font-nunito text-[15px] md:text-start text-justify">
+              <span>
+                Selamat datang di kawasan residensi-komersial premium terbaru di
+                Surabaya Barat, yang menghadirkan spirit keseimbangan dan
+                keselarasan hidup urban modern.</span
+              >
+              <br /><br /><span>
+                Masterplan Greenland seluas 100 Ha terdiri atas 8 residential
+                cluster dan 80 premium shophouse. Greenland adalah pilihan
+                terbaik untuk tempat tinggal, bisnis maupun rencana investasi
+                properti Anda.
+              </span>
+            </p>
+          </div>
+
+          <div
+            class="md:order-2 order-1 right-image md:w-[45%] w-[70%] md:pt-0 pt-5 md:pl-0 pl-5 relative"
+            data-aos="fade-left">
+            <img
+              src="img/content-1.jpg"
+              alt="Image description"
+              class="object-cover w-[260px] md:w-auto" />
+
+            <div
+              class="absolute inset-0 top-[300px] left-[-75px] flex flex-col justify-end text-white w-[230px] h-[80px] hidden sm:flex"
+              data-aos="fade-up"
+              data-aos-delay="100">
+              <h3 class="text-3xl font-times text-right font-bold">
+                Rising comfort <br />
+                to the highest levels
+              </h3>
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn-visit-green flex items-center md:pt-5 pt-0 md:pl-0 pl-5"
+          data-aos="fade-up"
+          data-aos-delay="300">
+          <span class="text text-xs tracking-wider">MORE ABOUT US</span>
+          <span class="circle">
+            <span class="arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 24 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  stroke="currentColor"
+                  stroke-width="2" />
+                <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section id="section2" class="bg-blend-img"></section>
+
+    <section id="section3" class="bg-[#f5f4ed]">
+      <h1
+        class="md:text-6xl text-4xl text-[#3c4f4b] font-times relative text-center"
+        data-aos="fade-up">
+        Clusters at GreenLand
+      </h1>
+      <p
+        class="text-center text-md md:mt-2 mt-5 px-5 md:px-0"
+        data-aos="fade-up"
+        data-aos-delay="100">
+        Unique contemporary architecture style to comfort your needs
+      </p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-10 md:w-[87%] w-full mx-auto md:px-0 px-5">
+        <div class="relative group" data-aos="zoom-in">
+          <img
+            src="img/cluster-1.jpg"
+            alt="Photo 1"
+            class="w-full h-auto object-cover" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-end text-white group-hover:bg-white group-hover:bg-opacity-50 transition-all duration-300">
+            <h3
+              class="text-4xl font-times capitalize ml-5 group-hover:text-[#38544c] transition-all duration-300">
+              Garbera Cluster
+            </h3>
+            <a
+              href="#"
+              class="mt-1 text-white mb-5 ml-5 group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold"
+              >VIEW GALLERY</a
+            >
+          </div>
+        </div>
+        <div class="relative group" data-aos="zoom-in" data-aos-delay="100">
+          <img
+            src="img/cluster-2.jpg"
+            alt="Photo 2"
+            class="w-full h-auto object-cover" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-end text-white group-hover:bg-white group-hover:bg-opacity-50 transition-all duration-300">
+            <h3
+              class="text-4xl font-times capitalize ml-5 group-hover:text-[#38544c] transition-all duration-300">
+              Wisteria Cluster
+            </h3>
+            <a
+              href="#"
+              class="mt-1 text-white mb-5 ml-5 group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold"
+              >VIEW GALLERY</a
+            >
+          </div>
+        </div>
+        <div class="relative group" data-aos="zoom-in" data-aos-delay="200">
+          <img
+            src="img/cluster-3.jpg"
+            alt="Photo 3"
+            class="w-full h-auto object-cover" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-end text-white group-hover:bg-white group-hover:bg-opacity-50 transition-all duration-300">
+            <h3
+              class="text-4xl font-times capitalize ml-5 group-hover:text-[#38544c] transition-all duration-300">
+              Natura Cluster
+            </h3>
+            <a
+              href="#"
+              class="mt-1 text-white mb-5 ml-5 group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold"
+              >VIEW GALLERY</a
+            >
+          </div>
+        </div>
+        <div class="relative group" data-aos="zoom-in" data-aos-delay="300">
+          <img
+            src="img/cluster-4.jpg"
+            alt="Photo 4"
+            class="w-full h-auto object-cover" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-end text-white group-hover:bg-white group-hover:bg-opacity-50 transition-all duration-300">
+            <h3
+              class="text-4xl font-times capitalize ml-5 group-hover:text-[#38544c] transition-all duration-300">
+              Armaya Cluster
+            </h3>
+            <a
+              href="#"
+              class="mt-1 text-white mb-5 ml-5 group-hover:text-[#38544c] transition-all duration-300 text-[10px] font-bold"
+              >VIEW GALLERY</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center md:mt-16 mt-6 md:pb-0 pb-8">
+        <button
+          class="btn-visit-black flex items-center pt-5 mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="300">
+          <span class="text text-xs tracking-wider">SCHEDULE A VISIT</span>
+          <span class="circle">
+            <span class="arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right"
+                viewBox="0 0 24 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  stroke="currentColor"
+                  stroke-width="2" />
+                <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </section>
+    <section id="section4" class="bg-blend md:py-16 py-4">
+      <div class="py-12 text-center">
+        <h1
+          class="md:text-6xl text-4xl text-[#3c4f4b] font-times mb-2 md:px-0 px-12"
+          data-aos="fade-down">
+          A Glimpse of GreenLand
+        </h1>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative md:w-3/4 w-full md:mx-0 mx-3">
+          <iframe
+            id="youtubeIframe"
+            class="md:h-[470px] h-[250px] w-full rounded-md"
+            data-src="https://www.youtube.com/embed/KMWT5JxiP10?controls=0&modestbranding=1&rel=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+          <div
+            id="videoOverlay"
+            class="absolute inset-0 flex justify-center items-center transition-opacity duration-500">
+            <button
+              id="playButton"
+              class="p-6 bg-white border-2 border-[#38544c] rounded-full hover:bg-[#38544c] animation-pulse">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-linejoin="round"
+                class="w-8 h-8 text-[#38544c] btn-yt hover:text-white">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="py-12 text-center md:mb-24 mb-0">
+        <h2 class="md:text-3xl text-[#38544c] text-2xl font-times font-normal">
+          More GreenLand Visual Tour
+        </h2>
+        <p
+          class="text-black mt-4 md:w-[48%] w-full text-center md:px-0 px-5 mx-auto md:text-[10px] text-xs tracking-wider">
+          Subscribe ke Youtube channel GreenLand dan dapatkan perkembangan serta
+          promo terkini. Anda dapat melihat dengan lebih detil aneka fitur dan
+          visual arsitektur hunian di GreenLand residence Surabaya Barat
+        </p>
+        <div
+          class="md:flex grid place-items-stretch justify-center md:mt-16 mt-10 md:gap-24 gap-6">
+          <button
+            class="btn-visit-black flex mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="300">
+            <span class="text text-xs tracking-wider">MORE VIDEOS</span>
+            <span class="circle">
+              <span class="arrow">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right"
+                  viewBox="0 0 24 16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    stroke="currentColor"
+                    stroke-width="2" />
+                  <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+                </svg>
+              </span>
+            </span>
+          </button>
+          <button
+            class="btn-visit-black flex mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="300">
+            <span class="text text-xs tracking-wider">YOUTUBE CHANNEL</span>
+            <span class="circle">
+              <span class="arrow">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right"
+                  viewBox="0 0 24 16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    stroke="currentColor"
+                    stroke-width="2" />
+                  <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="section5"
+      class="md:py-16 py-4 bg-[#f5f4ed] w-full flex justify-center">
+      <div class="container max-w-6xl">
+        <div class="text-center md:py-16 py-2">
+          <h2 class="text-base text-black font-nunito">NEWS & EVENTS</h2>
+          <h1
+            class="md:px-0 px-2 md:text-6xl text-4xl font-base mt-2 font-times text-[#38544c]">
+            Community Information at GreenLand
+          </h1>
+        </div>
+        <div class="flex justify-center items-center px-2 pt-12 w-full">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div
+              class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:text-white hover:bg-[#38544c] hover:text-white"
+              data-aos="fade-up"
+              data-aos-duration="300">
+              <div>
+                <p class="text-[10px] font-semibold">NEWS - 3 SEPTEMBER 2024</p>
+                <h3 class="text-xl font-base leading-[30px] mt-2">
+                  GreenLand antisipasi MPOX dengan POS Kesehatan
+                </h3>
+              </div>
+              <div class="mt-auto">
+                <hr class="my-3 border-[#BFCEC9FF]" />
+                <a href="#" class="mb-4 text-[10px] font-bold">READ MORE</a>
+              </div>
+            </div>
+            <div
+              class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:text-white hover:bg-[#38544c] hover:text-white"
+              data-aos="fade-up"
+              data-aos-duration="300"
+              data-aos-delay="100">
+              <div>
+                <p class="text-[10px] font-semibold">NEWS - 5 SEPTEMBER 2024</p>
+                <h3 class="text-xl font-base leading-[30px] mt-2">
+                  Pembaharuan aplikasi P3RS penghuni GreenLand sudah bisa di
+                  download
+                </h3>
+              </div>
+              <div class="mt-auto">
+                <hr class="my-3 border-[#BFCEC9FF]" />
+                <a href="#" class="mb-4 text-[10px] font-bold">READ MORE</a>
+              </div>
+            </div>
+            <div
+              class="bg-white text-[#38544c] w-[350px] px-12 py-8 rounded-lg flex flex-col justify-between hover:text-white hover:bg-[#38544c] hover:text-white"
+              data-aos="fade-up"
+              data-aos-duration="300"
+              data-aos-delay="200">
+              <div>
+                <p class="text-[10px] font-semibold">NEWS - 5 SEPTEMBER 2024</p>
+                <h3 class="text-xl font-base leading-[30px] mt-2">
+                  Pembaharuan aplikasi P3RS penghuni GreenLand sudah bisa di
+                  download
+                </h3>
+              </div>
+              <div class="mt-auto">
+                <hr class="my-3 border-[#BFCEC9FF]" />
+                <a href="#" class="mb-4 text-[10px] font-bold">READ MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-8 mb-8">
+          <button
+            class="btn-visit-black flex items-center pt-5 mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="300">
+            <span class="text text-xs tracking-wider">VIEW ALL</span>
+            <span class="circle">
+              <span class="arrow">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right"
+                  viewBox="0 0 24 16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    stroke="currentColor"
+                    stroke-width="2" />
+                  <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="section6" class="bg-white">
+      <div class="flex flex-col lg:flex-row h-[75vh]">
+        <div class="lg:w-51/100 md:px-0 px-5">
+          <img
+            alt="Entrance to Green Land with palm trees and cars on the road"
+            class="w-full h-full object-cover"
+            height="200"
+            src="./img/contenTPromo.jpg"
+            width="640"
+            data-aos="fade-up" />
+        </div>
+        <div
+          class="lg:w-49/100 flex flex-col justify-center items-start md:p-8 p-5 lg:p-16">
+          <span class="text-base font-normal text-[#38544c]">
+            PROMO &amp; OFFERS
+          </span>
+          <span class="md:text-6xl text-4xl py-6 font-times text-[#38544c]">
+            Your green home <br />
+            awaits
+          </span>
+          <button
+            class="btn-visit-green flex"
+            data-aos="fade-up"
+            data-aos-delay="300">
+            <span class="text text-xs tracking-wider">SEE PROMOTION</span>
+            <span class="circle">
+              <span class="arrow">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right"
+                  viewBox="0 0 24 16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h18.793l-3.146-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L20.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    stroke="currentColor"
+                    stroke-width="2" />
+                  <path d="M18 8l2-2v4l-2-2z" fill="currentColor" />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <footer
+      id="footer"
+      class="flex flex-col items-center justify-center pt-10 pb-12 bg-[#3c4f4b] text-white">
+      <div class="text-center w-[90%]">
+        <img
+          alt="Greenland logo"
+          class="mx-auto mb-10"
+          src="./img/footer-logo.png"
+          width="145px"
+          data-aos="zoom-in"
+          data-aos-delay="200" />
+        <p
+          class="text-[10px] font-bold"
+          data-aos="fade-up"
+          data-aos-delay="300">
+          CONTACT YOUR PERSONAL AGENT:
+        </p>
+        <p
+          class="text-[15px] font-bold mb-8"
+          data-aos="fade-up"
+          data-aos-delay="400">
+          <a
+            href="https://wa.me/6289509512660?text=urlencodedtext"
+            style="text-decoration: none">
+            NINA: +62 81 2345 7788
+          </a>
+        </p>
+        <p
+          class="max-w-lg text-[10px] mx-auto mb-8 tracking-wider font-light"
+          data-aos="fade-up"
+          data-aos-delay="500">
+          GreenLand di Surabaya Barat menghadirkan atmosfer hunian yang natural
+          dan
+          <br />
+          bersinergi dengan desain arsitektur kontemporer ramah lingkungan untuk
+          <br />
+          menciptakan lifestyle yang harmonis dengan alam.
+        </p>
+        <hr class="border-gray-400 mb-6 border-t-[1px]" />
+        <div class="md:flex block justify-between">
+          <p class="text-[10px]">
+            © GREENLAND RESIDENCE 2024 - A PROJECT BY PT BANGUN PERSADA BERJAYA.
+          </p>
+          <p class="text-[10px] md:mt-0 mt-4">
+            WEBSITE DESIGN &amp; DEVELOPMENT BY MARK DESIGN INDONESIA.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      module.exports = {
+        theme: {
+          extend: {
+            colors: {
+              main: "#3c4f4b",
+              body: "#ffffff",
+              second: "#f5f4ed",
+            },
+            fontFamily: {
+              nunito: ["Nunito", "sans-serif"],
+            },
+            backdropFilter: {
+              none: "none",
+              blur: "blur(10px)",
+            },
+          },
+        },
+        variants: {
+          extend: {
+            backdropFilter: ["responsive"],
+          },
+        },
+        plugins: [
+          require("@tailwindcss/forms"),
+          require("tailwindcss-filters"),
+        ],
+      };
+      s;
+    </script>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navigation = document.getElementById("navigation");
+
+      menuToggle.addEventListener("click", () => {
+        navigation.classList.toggle("hidden");
+        navigation.classList.toggle("translate-y-0");
+        navigation.classList.toggle("opacity-100");
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const playButton = document.getElementById("playButton");
+        const videoOverlay = document.getElementById("videoOverlay");
+        const youtubeIframe = document.getElementById("youtubeIframe");
+
+        playButton.addEventListener("click", function () {
+          const src = youtubeIframe.getAttribute("data-src");
+          youtubeIframe.setAttribute("src", src + "&autoplay=1");
+          videoOverlay.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
