@@ -15,6 +15,82 @@
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      /* Default font sizes (untuk layar besar) */
+      .fz-title {
+        font-size: 65px;
+      }
+      .fz-subtitle {
+        font-size: 30px;
+      }
+      .fz-paragraf {
+        font-size: 20px;
+      }
+
+      /* Layar laptop besar (1440px dan 1366px) */
+      @media (max-width: 1440px) {
+        .fz-title {
+          font-size: 60px;
+        }
+        .fz-subtitle {
+          font-size: 28px;
+        }
+        .fz-paragraf {
+          font-size: 18px;
+        }
+      }
+
+      /* Layar tablet horizontal (1280px dan 1180px) */
+      @media (max-width: 1280px) {
+        .fz-title {
+          font-size: 55px;
+        }
+        .fz-subtitle {
+          font-size: 26px;
+        }
+        .fz-paragraf {
+          font-size: 17px;
+        }
+      }
+
+      /* Layar tablet horizontal dan kecil (1024px) */
+      @media (max-width: 1024px) {
+        .fz-title {
+          font-size: 50px;
+        }
+        .fz-subtitle {
+          font-size: 24px;
+        }
+        .fz-paragraf {
+          font-size: 16px;
+        }
+      }
+
+      /* Layar tablet vertical (768px) */
+      @media (max-width: 768px) {
+        .fz-title {
+          font-size: 45px;
+        }
+        .fz-subtitle {
+          font-size: 22px;
+        }
+        .fz-paragraf {
+          font-size: 15px;
+        }
+      }
+
+      /* Layar mobile (kurang dari 650px) */
+      @media (max-width: 650px) {
+        .fz-title {
+          font-size: 40px;
+        }
+        .fz-subtitle {
+          font-size: 20px;
+        }
+        .fz-paragraf {
+          font-size: 14px;
+        }
+      }
+
       .font-nunito {
         font-family: "Nunito Sans", sans-serif;
       }
@@ -144,7 +220,6 @@
     </header>
 
     <script>
-      // Toggle sidebar open
       document
         .getElementById("menu-toggle")
         .addEventListener("click", function () {
@@ -153,7 +228,6 @@
             .classList.remove("translate-x-full");
         });
 
-      // Toggle sidebar close
       document
         .getElementById("menu-close")
         .addEventListener("click", function () {
@@ -161,6 +235,14 @@
             .getElementById("side-menu")
             .classList.add("translate-x-full");
         });
+
+      document.querySelectorAll("#side-menu .scroll-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          document
+            .getElementById("side-menu")
+            .classList.add("translate-x-full");
+        });
+      });
     </script>
 
     <section
@@ -171,7 +253,7 @@
         <div class="flex-grow flex items-center justify-start">
           <div class="text-left text-white px-8 md:px-16">
             <h1
-              class="text-4xl md:text-5xl text-size-main font-normal leading-tight font-times"
+              class="text-4xl md:text-5xl text-size-main font-normal leading-tight font-times fz-title"
               data-aos="fade-up">
               Building A Lifetime
               <br />
@@ -191,8 +273,9 @@
           <div
             class="w-2/4 font-nunito text-white text-md"
             data-aos="fade-down">
-            <span class="font-thin text-[14px]">GREENLAND</span> <br />
-            <span class="font-semibold">YOUR PATH OF SUCCESS</span>
+            <span class="font-thin fz-subtitle">GREENLAND</span>
+            <br />
+            <span class="font-semibold fz-subtitle">YOUR PATH OF SUCCESS</span>
           </div>
           <div class="w-3/4 md:mt-0 mt-5" data-aos="fade-up">
             <p
@@ -232,8 +315,8 @@
               Building your Green home is a seamless integrated experience at
               Greenland
             </p>
-            <p
-              class="text-black text-desc md:w-[90%] w-[139%] text-justify font-nunito mt-8"
+            <div
+              class="text-black md:w-[90%] w-[139%] text-justify font-nunito mt-8 fz-paragraf"
               data-aos="fade-up">
               Terletak di jantung Surabaya Barat, kawasan yang penuh dengan
               perkembangan dinamis, Greenland adalah destinasi investasi masa
@@ -263,7 +346,7 @@
               adalah kesempatan baru untuk bergerak, bersosialisasi, dan
               menikmati alam terbuka yang asri. Greenland adalah gaya hidup,
               tempat harmoni alam dan kemajuan bertemu.
-            </p>
+            </div>
           </div>
         </div>
         <div class="w-full place-items-end flex md:order-2 order-1">

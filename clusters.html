@@ -16,6 +16,80 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+          .fz-title {
+        font-size: 65px;
+      }
+      .fz-subtitle {
+        font-size: 50px;
+      }
+      .fz-paragraf {
+        font-size: 20px;
+      }
+
+      /* Layar laptop besar (1440px dan 1366px) */
+      @media (max-width: 1440px) {
+        .fz-title {
+          font-size: 60px;
+        }
+        .fz-subtitle {
+          font-size: 46px;
+        }
+        .fz-paragraf {
+          font-size: 18px;
+        }
+      }
+
+      /* Layar tablet horizontal (1280px dan 1180px) */
+      @media (max-width: 1280px) {
+        .fz-title {
+          font-size: 55px;
+        }
+        .fz-subtitle {
+          font-size: 42px;
+        }
+        .fz-paragraf {
+          font-size: 17px;
+        }
+      }
+
+      /* Layar tablet horizontal dan kecil (1024px) */
+      @media (max-width: 1024px) {
+        .fz-title {
+          font-size: 50px;
+        }
+        .fz-subtitle {
+          font-size: 38px;
+        }
+        .fz-paragraf {
+          font-size: 16px;
+        }
+      }
+
+      /* Layar tablet vertical (768px) */
+      @media (max-width: 768px) {
+        .fz-title {
+          font-size: 45px;
+        }
+        .fz-subtitle {
+          font-size: 34px;
+        }
+        .fz-paragraf {
+          font-size: 15px;
+        }
+      }
+
+      /* Layar mobile (kurang dari 650px) */
+      @media (max-width: 650px) {
+        .fz-title {
+          font-size: 40px;
+        }
+        .fz-subtitle {
+          font-size: 30px;
+        }
+        .fz-paragraf {
+          font-size: 14px;
+        }
+      }
       .btn-visit-black {
         display: inline-flex;
         align-items: center;
@@ -178,7 +252,7 @@
     </header>
 
     <script>
-      document
+    document
         .getElementById("menu-toggle")
         .addEventListener("click", function () {
           document
@@ -193,6 +267,14 @@
             .getElementById("side-menu")
             .classList.add("translate-x-full");
         });
+
+      document.querySelectorAll("#side-menu .scroll-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          document
+            .getElementById("side-menu")
+            .classList.add("translate-x-full");
+        });
+      });
     </script>
     <section
       id="section0"
